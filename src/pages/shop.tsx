@@ -2,15 +2,15 @@ import * as React from "react";
 import lodash from 'lodash';
 import Modal from "react-modal";
 import { FaTimes } from "react-icons/fa";
-import { Button } from "./components/button";
-import ProductList from "./components/product-list-components";
-import { Form } from "./components/form";
-import logo from "./images/droppe-logo.png";
-import img1 from "./images/img1.png";
-import img2 from "./images/img2.png";
-import styles from "./shopApp.module.css";
+import { Button } from "../components/base/button";
+import ProductList from "../components/elements/productList";
+import { Form } from "../components/elements/addProductForm";
+import logo from "../images/droppe-logo.png";
+import img1 from "../images/img1.png";
+import img2 from "../images/img2.png";
+import styles from "./shop.module.css";
 
-export class ShopApp extends React.Component<
+export class Shop extends React.Component<
   {},
   { products: any[]; isOpen: boolean; isShowingMessage: boolean; message: string; numFavorites: number; prodCount: number }
 > {
