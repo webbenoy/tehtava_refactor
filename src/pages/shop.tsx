@@ -5,7 +5,6 @@ import { FaTimes } from "react-icons/fa";
 import { Button } from "../components/base/button";
 import ProductList from "../components/elements/productList";
 import { Form } from "../components/elements/addProductForm";
-import logo from "../images/droppe-logo.png";
 import img1 from "../images/img1.png";
 import img2 from "../images/img2.png";
 import styles from "./shop.module.css";
@@ -113,12 +112,6 @@ export class Shop extends React.Component<
     const { products, isOpen } = this.state;
     return (
       <React.Fragment>
-        <div className={styles.header}>
-          <div className={['container', styles.headerImageWrapper].join(' ')}>
-            <img src={logo} className={styles.headerImage} />
-          </div>
-        </div>
-
         <>
            <span
               className={['container', styles.main].join(' ')}
