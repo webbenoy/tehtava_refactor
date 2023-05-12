@@ -1,15 +1,24 @@
-import React from "react";
+import * as React from "react";
 import ReactDOM from "react-dom";
 import Modal from "react-modal"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
-import { ShopApp } from "./shop-app";
+import RootLayout from "./pages/layout";
+import { Shop } from "./pages/shop";
 import * as serviceWorker from "./serviceWorker";
 
 Modal.setAppElement("#root")
 
+/** TODO: Implement 404 route to catch all */
 ReactDOM.render(
   <React.StrictMode>
-    <ShopApp />
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<RootLayout />}>
+					<Route index element={<Shop />} />
+				</Route>
+			</Routes>
+		</BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
