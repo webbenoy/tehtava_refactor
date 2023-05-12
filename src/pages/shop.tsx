@@ -5,8 +5,8 @@ import { FaTimes } from "react-icons/fa";
 import { Button } from "../components/base/button";
 import ProductList from "../components/elements/productList";
 import { Form } from "../components/elements/addProductForm";
-import img1 from "../images/img1.png";
-import img2 from "../images/img2.png";
+import img1 from "../images/img1.webp";
+import img2 from "../images/img2.webp";
 import styles from "./shop.module.css";
 
 export class Shop extends React.Component<

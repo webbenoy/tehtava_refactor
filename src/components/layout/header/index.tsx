@@ -1,6 +1,6 @@
 import React from "react";
 import styles from './header.module.css';
-import logo from "../../../images/droppe-logo.png";
+import logo from "../../../images/droppe-logo.webp";
 
 export default function Header() {
     return (
