@@ -1,40 +1,40 @@
-import * as React from "react";
+import React, {FC, useRef, FormEvent} from "react";
 import { Button } from "../../base/button";
 import styles from "./addProductForm.module.css";
 
-type FormProps = {
-  "on-submit": (payload: { title: string; description: string; price: string }) => void;
+interface IFormProps {
+	onSubmit(payload: object): void,
 }
 
-export const AddProductForm: React.FC<FormProps> = (props) => {
-  let formRef = React.useRef<HTMLFormElement>(null);
-  let titleRef = React.useRef<HTMLInputElement>(null);
-  let priceRef = React.useRef<HTMLInputElement>(null);
-  let descriptionRef = React.useRef<HTMLTextAreaElement>(null);
+export const AddProductForm: FC<IFormProps> = ({onSubmit}) => {
+  	const formRef = useRef<HTMLFormElement>(null),
+  	titleRef = useRef<HTMLInputElement>(null),
+  	priceRef = useRef<HTMLInputElement>(null),
+  	descriptionRef = useRef<HTMLTextAreaElement>(null);
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
+  	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
 
-    if (!titleRef.current?.value) {
-      alert("Your product needs a title");
+		if (!titleRef.current?.value) {
+			alert("Your product needs a title");
 
-      return;
-    }
+			return;
+		}
 
-    if (!descriptionRef.current?.value || !priceRef.current?.value) {
-      alert("Your product needs some content");
+		if (!descriptionRef.current?.value || !priceRef.current?.value) {
+			alert("Your product needs some content");
 
-      return;
-    }
+			return;
+		}
 
-    props["on-submit"]({
-      title: titleRef.current && titleRef.current.value,
-      description: descriptionRef.current && descriptionRef.current.value,
-      price: priceRef.current && priceRef.current.value,
-    });
+		onSubmit({
+			title: titleRef.current && titleRef.current.value,
+			description: descriptionRef.current && descriptionRef.current.value,
+			price: priceRef.current && priceRef.current.value,
+		});
 
-    formRef.current?.reset();
-  };
+		formRef.current?.reset();
+  	};
 
   return (
     <form className={styles.form} onSubmit={(event) => handleSubmit(event)} ref={formRef}>
