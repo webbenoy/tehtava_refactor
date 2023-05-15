@@ -2,11 +2,11 @@ import * as React from "react";
 import { Button } from "../../base/button";
 import styles from "./addProductForm.module.css";
 
-type IFormProps = {
+type FormProps = {
   "on-submit": (payload: { title: string; description: string; price: string }) => void;
 }
 
-export const Form: React.FC<IFormProps> = (props) => {
+export const AddProductForm: React.FC<FormProps> = (props) => {
   let formRef = React.useRef<HTMLFormElement>(null);
   let titleRef = React.useRef<HTMLInputElement>(null);
   let priceRef = React.useRef<HTMLInputElement>(null);
