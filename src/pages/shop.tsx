@@ -49,8 +49,8 @@ export const Shop: FC = () => {
 		const data = await request.json();
 		setTimeout(() => {
         // I'm loggigng the data here just to use the variable.
-        console.log(data);
-        setShowMessage(false);
+			console.log(data);
+			setShowMessage(false);
 		}, 2000);
 
 
@@ -117,7 +117,7 @@ export const Shop: FC = () => {
 						>
 							<FaTimes />
 						</div>
-						<AddProductForm on-submit={onSubmit}/>
+						<AddProductForm onSubmit={onSubmit}/>
 					</div>
 				</Modal>
 			</>
