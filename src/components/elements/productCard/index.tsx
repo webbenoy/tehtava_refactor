@@ -14,6 +14,7 @@ export const ProductCard: FC<IComponentProps> = ({ product, toggleFav }) => {
     }
     
     // Problem: Now product title can be too long, I just put overflowX as fix now
+    // TODO: Remove inline styles and fix css
     return (
       <span className={styles.productClass} style={{display: 'inline-block', overflowX: 'scroll', float: 'none', clear: 'both'}}>
         <span className={styles['product-title']} style={{overflowX: 'hidden'}}>{product.title}</span>
@@ -30,7 +31,7 @@ export const ProductCard: FC<IComponentProps> = ({ product, toggleFav }) => {
   
         <span className={styles['action_bar']} style={{display: 'table', width: "100%"}}>
           <button
-            className={`${styles.actionBarItem} ${
+              className={`${styles.actionBarItem} ${
               product.isFav ? "active" : ""
             }`}
             onClick={toggleFavorite}

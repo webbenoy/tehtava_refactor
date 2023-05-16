@@ -1,5 +1,4 @@
 import React, {FC, useState, FormEvent, ChangeEvent} from "react";
-import { Button } from "../../base/button";
 import styles from "./addProductForm.module.css";
 
 interface IFormProps {
@@ -60,32 +59,42 @@ export const AddProductForm: FC<IFormProps> = ({onSubmit}) => {
 			description,
 			price,
 		});
+		
 		resetValues();
   	};
 
   return (
-    <form className={styles.form} onSubmit={(event) => handleSubmit(event)}>
-      <span className={styles.label}>Product title: *</span>
+    <form
+		className={styles.form}
+		onSubmit={handleSubmit}
+		>
+      <label className={styles.label} htmlFor="title">Product title: *</label>
 
       <input
         placeholder="Title..."
         value={title}
+		name="title"
+		id="title"
         className={styles.input}
 		onChange={handleTitleChange}
       />
 
-      <span className={styles.label}>Product details: *</span>
+      <label className={styles.label} htmlFor="price">Product price: *</label>
 
       <input
         placeholder="Price..."
         value={price}
+		name="price"
+		id="price"
         className={styles.input}
 		onChange={handlePriceChange}
       />
-
+	<label className={styles.label} htmlFor="description">Product description: *</label>
       <textarea
         placeholder="Start typing product description here..."
         value={description}
+		name="description"
+		id="description"
         className={styles.textarea}
 		onChange={handleDescriptionChange}
       />
