@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from "react";
+import React, {FC, useEffect, useState, Fragment} from "react";
 import {IProduct} from "src/interfaces/product";
 import lodash from 'lodash';
 import Modal from "react-modal";
@@ -78,7 +78,7 @@ export const Shop: FC = () => {
 	}
 
 	return (
-		<React.Fragment>
+		<Fragment>
 			<>
 				<span
 					className={['container', styles.main].join(' ')}
@@ -121,6 +121,6 @@ export const Shop: FC = () => {
 					</div>
 				</Modal>
 			</>
-		</React.Fragment>
+		</Fragment>
 	)
 }
